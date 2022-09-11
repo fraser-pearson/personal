@@ -37,6 +37,8 @@
     "dotenv": "^16.0.2",
     "express": "^4.17.2",
     "knex": "^2.1.0",
+    "mock": "^0.1.1",
+    "nock": "^13.2.9",
     "pg": "^8.7.1",
     "sqlite3": "^5.0.8",
     "superagent": "7.1.1"
@@ -69,7 +71,7 @@
     "react-router-dom": "^6.2.2",
     "redux": "^4.1.1",
     "redux-thunk": "^2.3.0",
-    "supertest": "^6.2.2",
+    "supertest": "^6.2.4",
     "webpack": "^5.69.1",
     "webpack-cli": "^4.9.2"
   },

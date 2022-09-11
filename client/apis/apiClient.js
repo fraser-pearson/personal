@@ -1,6 +1,6 @@
 import request from 'superagent'
 
-const rootUrl = '/api/v1'
+const rootUrl = 'http://localhost:3000/api/v1'
 
 export function getFish() {
   return request.get(rootUrl + '/fish').then((res) => {
