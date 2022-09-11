@@ -7,3 +7,9 @@ export function getFish() {
     return res.body
   })
 }
+
+export function getWeather() {
+  return request.get(rootUrl + '/weather').then((res) => {
+    return res.body
+  })
+}

@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { fetchFish } from '../actions'
+import Weather from './Weather'
 
 function App() {
   const fish = useSelector((state) => state.fish)
@@ -20,6 +21,7 @@ function App() {
           ))}
         </ul>
       </div>
+      <Weather />
     </>
   )
 }
