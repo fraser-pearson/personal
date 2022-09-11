@@ -1,4 +1,4 @@
-import { SET_FISH } from '../actions'
+import { SET_FISH, ADD_FISH } from '../actions'
 
 const initialState = []
 
@@ -7,6 +7,8 @@ const reducer = (state = initialState, action) => {
   switch (type) {
     case SET_FISH:
       return payload
+    case ADD_FISH:
+      return [...state, payload]
     default:
       return state
   }

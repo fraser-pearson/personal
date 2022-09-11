@@ -1,10 +1,11 @@
 import request from 'superagent'
-import { getFish, getWeather } from '../apis/apiClient'
+import { getFish, getWeather, addNewFish } from '../apis/apiClient'
 
 export const SET_FISH = 'SET_FISH'
 // export const SET_WEATHER = 'SET_WEATHER'
 export const REQUEST_WEATHER = 'REQUEST_WEATHER'
 export const RECEIVE_WEATHER = 'RECEIVE_WEATHER'
+export const ADD_FISH = 'ADD_FISH'
 
 export function setfish(fish) {
   return {
@@ -13,13 +14,6 @@ export function setfish(fish) {
   }
 }
 
-// export function setweather(weather) {
-//   return {
-//     type: SET_WEATHER,
-//     payload: weather,
-//   }
-// }
-
 export function fetchFish() {
   return (dispatch) => {
     return getFish().then((fish) => {
@@ -27,19 +21,6 @@ export function fetchFish() {
     })
   }
 }
-
-// export function fetchWeather() {
-//   return (dispatch) => {
-//     return getWeather()
-//       .then((weather) => {
-//         dispatch(setweather(weather))
-//         return null
-//       })
-//       .catch((err) => {
-//         console.error(err, 'error not item')
-//       })
-//   }
-// }
 
 export function requestWeather() {
   return {
@@ -64,6 +45,26 @@ export function fetchWeather() {
       })
       .catch((err) => {
         console.error(err, 'error not weather')
+      })
+  }
+}
+
+export function addFish(fish) {
+  return {
+    type: 'ADD_FISH',
+    payload: fish,
+  }
+}
+
+export function addAFish(fish) {
+  return (dispatch) => {
+    return addNewFish(fish)
+      .then((aFish) => {
+        dispatch(addFish(aFish))
+        return null
+      })
+      .catch((err) => {
+        console.error(err, 'error not item')
       })
   }
 }

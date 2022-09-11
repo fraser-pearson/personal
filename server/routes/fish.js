@@ -15,4 +15,17 @@ router.get('/', (req, res) => {
     })
 })
 
+router.post('/', (req, res) => {
+  const fish = req.body.newFish
+  db.addFish(fish)
+    .then((results) => {
+      res.json(results[0])
+      return null
+    })
+    .catch((err) => {
+      console.log(err)
+      res.status(500).json({ message: 'Somthing went wrong' })
+    })
+})
+
 module.exports = router

@@ -8,6 +8,15 @@ export function getFish() {
   })
 }
 
+export function addNewFish(newFish) {
+  return request
+    .post(rootUrl + '/fish')
+    .send({ newFish })
+    .then((res) => {
+      return res.body
+    })
+}
+
 export function getWeather() {
   return request.get(rootUrl + '/weather').then((res) => {
     return res.body
