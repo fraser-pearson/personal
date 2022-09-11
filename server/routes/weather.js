@@ -6,11 +6,10 @@ require('dotenv').config()
 router.get('/', (req, res) => {
   return request
     .get(
-      'https://archive-api.open-meteo.com/v1/era5?latitude=52.52&longitude=13.41&start_date=2022-01-01&end_date=2022-07-13&hourly=temperature_2m'
+      'https://api.open-meteo.com/v1/forecast?latitude=-41.2865&longitude=174.7762&daily=precipitation_sum,rain_sum,weathercode&timezone=NZ'
     )
-    .then((response) => {
-      console.log(response.body)
-      res.json(response.body)
+    .then((result) => {
+      res.json(result.body)
     })
 })
 

@@ -1,26 +1,16 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-
-import { fetchFish } from '../actions'
+import React from 'react'
 import Weather from './Weather'
+import Fish from './Fish'
+import Wait from './Wait'
+import LoadWeather from './LoadWeather'
 
 function App() {
-  const fish = useSelector((state) => state.fish)
-  const dispatch = useDispatch()
-  useEffect(() => {
-    dispatch(fetchFish())
-  }, [])
-
   return (
     <>
-      <div className="app">
-        <h1>list of fish</h1>
-        <ul>
-          {fish.map((aFish, i) => (
-            <li key={i}>{aFish.species}</li>
-          ))}
-        </ul>
-      </div>
+      <Fish />
+      <LoadWeather>
+        <Wait />
+      </LoadWeather>
       <Weather />
     </>
   )
