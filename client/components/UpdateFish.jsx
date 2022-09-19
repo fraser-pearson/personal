@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux'
 
 export function UpdateFish({ id }) {
   const fish = useSelector((state) => state.fish)
-  console.log(fish)
   const dispatch = useDispatch()
 
   function handleSubmit(e) {

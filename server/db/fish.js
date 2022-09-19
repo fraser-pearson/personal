@@ -15,11 +15,15 @@ function addFish(fish, db = connection) {
 }
 
 function UpdateFish(id, update, db = connection) {
-  return db('wombles')
+  return db('fish')
     .update({
       species: update.species,
     })
     .where('id', id)
+}
+
+function deleteFish(id, db = connection) {
+  return db('fish').delete().where('id', id)
 }
 
 module.exports = {
@@ -27,4 +31,5 @@ module.exports = {
   addFish,
   UpdateFish,
   getSingleFish,
+  deleteFish,
 }

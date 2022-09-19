@@ -40,4 +40,16 @@ router.post('/', (req, res) => {
     })
 })
 
+router.delete('/:id', (req, res) => {
+  const fish = req.body.newFish
+  db.deleteFish(fish)
+    .then(() => {
+      res.sendStatus(200)
+    })
+    .catch((err) => {
+      console.log(err)
+      res.status(500).json({ message: 'Somthing went wrong' })
+    })
+})
+
 module.exports = router
