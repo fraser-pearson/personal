@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-
+import SingleFish from './SingleFish'
 import { fetchFish } from '../actions'
 
 function Fish() {
   const fish = useSelector((state) => state.fish)
+  console.log(fish)
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(fetchFish())
@@ -15,8 +16,10 @@ function Fish() {
       <div className="app">
         <h1>Fish in this location</h1>
         <ul>
-          {fish.map((aFish, i) => (
-            <li key={i}>{aFish.species}</li>
+          {fish.map((aFish) => (
+            <li key={aFish.id}>
+              <SingleFish species={aFish.species} />
+            </li>
           ))}
         </ul>
       </div>

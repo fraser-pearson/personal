@@ -1,4 +1,4 @@
-import { SET_FISH, ADD_FISH } from '../actions'
+import { SET_FISH, ADD_FISH, UPDATE_FISH } from '../actions'
 
 const initialState = []
 
@@ -9,6 +9,10 @@ const reducer = (state = initialState, action) => {
       return payload
     case ADD_FISH:
       return [...state, payload]
+    case UPDATE_FISH:
+      // eslint-disable-next-line no-case-declarations
+      const { newFish, oldFish } = action.payload
+      return state.map((fish) => (fish === oldFish ? newFish : fish))
     default:
       return state
   }

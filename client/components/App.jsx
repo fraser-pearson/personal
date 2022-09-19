@@ -1,19 +1,20 @@
 import React from 'react'
-import Weather from './Weather'
 import Fish from './Fish'
 import AddFish from './AddFish'
-import Wait from './Wait'
-import LoadWeather from './LoadWeather'
+//import Weather from './Weather'
+//import Wait from './Wait'
+//import LoadWeather from './LoadWeather'
 
 function App() {
   return (
     <>
       <Fish />
       <AddFish />
-      <LoadWeather>
+
+      {/* <LoadWeather>
         <Wait />
       </LoadWeather>
-      <Weather />
+      <Weather /> */}
     </>
   )
 }
