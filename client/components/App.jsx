@@ -4,13 +4,11 @@ import AddFish from './AddFish'
 //import Weather from './Weather'
 //import Wait from './Wait'
 //import LoadWeather from './LoadWeather'
-
 function App() {
   return (
     <>
       <Fish />
       <AddFish />
-
       {/* <LoadWeather>
         <Wait />
       </LoadWeather>

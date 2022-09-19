@@ -4,7 +4,7 @@ const db = require('../db/fish')
 
 const router = express.Router()
 
-router.get('/:id/', (req, res) => {
+router.get('/:id', (req, res) => {
   const Id = Number(req.params.id)
   db.getWomblesById(Id)
     .then((oneFish) => {

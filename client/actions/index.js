@@ -70,22 +70,22 @@ export function addAFish(fish) {
   }
 }
 
-export function updateFish(id, newFish) {
+export const updateFish = (oldFish, newFish) => {
   return {
     type: UPDATE_FISH,
-    payload: { id, newFish },
+    payload: { oldFish, newFish },
   }
 }
 
-export function updateAFish(id, fish) {
-  return (dispatch) => {
-    return updateFishAPI(id, fish)
-      .then((aFish) => {
-        dispatch(addFish(aFish))
-        return null
-      })
-      .catch((err) => {
-        console.error(err, 'error not item')
-      })
-  }
-}
+// export function updateAFish(id, fish) {
+//   return (dispatch) => {
+//     return updateFishAPI(id, fish)
+//       .then((aFish) => {
+//         dispatch(addFish(aFish))
+//         return null
+//       })
+//       .catch((err) => {
+//         console.error(err, 'error not item')
+//       })
+//   }
+// }
