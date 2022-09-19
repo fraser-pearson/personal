@@ -6,7 +6,7 @@ const router = express.Router()
 
 router.get('/:id', (req, res) => {
   const Id = Number(req.params.id)
-  db.getWomblesById(Id)
+  db.getSingleFish(Id)
     .then((oneFish) => {
       res.json(oneFish)
     })

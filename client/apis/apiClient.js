@@ -19,7 +19,7 @@ export function addNewFish(newFish) {
 
 export function updateFishAPI(id, newFish) {
   return request
-    .post(rootUrl + '/fish/' + id)
+    .post(rootUrl + `/fish/${id}`)
     .send(newFish)
     .then((res) => {
       return res.body

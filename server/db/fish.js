@@ -26,4 +26,5 @@ module.exports = {
   getFish,
   addFish,
   UpdateFish,
+  getSingleFish,
 }

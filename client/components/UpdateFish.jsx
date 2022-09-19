@@ -1,15 +1,16 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
-import { updateFish } from '../actions'
-import { Link } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+//import { updateFish } from '../actions'
 
 export function UpdateFish({ id }) {
+  const fish = useSelector((state) => state.fish)
+  console.log(fish)
   const dispatch = useDispatch()
 
   function handleSubmit(e) {
     e.preventDefault()
     console.log(id)
-    dispatch(updateFish(id))
+    //dispatch(updateFish(id))
   }
   return (
     <>
