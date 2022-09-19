@@ -22,7 +22,7 @@ export default function AddForm() {
             value={newFish}
             onChange={(e) => setNewFish(e.target.value)}
           />
-          <button>Add</button>
+          <button className="btn btn-primary">Add</button>
         </form>
       </div>
     </div>

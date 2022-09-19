@@ -13,7 +13,7 @@ function Fish() {
   return (
     <>
       <div className="app">
-        <h1>list of fish</h1>
+        <h1>Fish in this location</h1>
         <ul>
           {fish.map((aFish, i) => (
             <li key={i}>{aFish.species}</li>

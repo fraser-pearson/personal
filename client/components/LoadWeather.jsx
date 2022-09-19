@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { useDispatch } from 'react-redux'
 
 import { fetchWeather } from '../actions'
@@ -8,11 +8,15 @@ function LoadWeather() {
 
   return (
     <div>
-      <label htmlFor="fname">latitude:</label>
-      <input type="text" id="fname" name="fname"></input>
-      <label htmlFor="lname">longitude:</label>
-      <input type="text" id="lname" name="lname"></input>
-      <button onClick={() => dispatch(fetchWeather())}>
+      <img src="images/nzMap.PNG" alt="map"></img>
+      <label htmlFor="latitude">latitude: </label>
+      <input type="text" id="latitude" name="latitude"></input>
+      <label htmlFor="longitude">longitude: </label>
+      <input type="text" id="longitude" name="longitude"></input>
+      <button
+        className="btn btn-success"
+        onClick={() => dispatch(fetchWeather())}
+      >
         Whats the weather
       </button>
     </div>

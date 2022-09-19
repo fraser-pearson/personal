@@ -1,5 +1,5 @@
 import request from 'superagent'
-import { getFish, getWeather, addNewFish } from '../apis/apiClient'
+import { getFish, addNewFish } from '../apis/apiClient'
 
 export const SET_FISH = 'SET_FISH'
 // export const SET_WEATHER = 'SET_WEATHER'
