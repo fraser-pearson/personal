@@ -1,5 +1,5 @@
 import request from 'superagent'
-import { getFish, addNewFish, updateFishAPI } from '../apis/apiClient'
+import { getFish, addNewFish, deleteFishAPI } from '../apis/apiClient'
 
 export const SET_FISH = 'SET_FISH'
 // export const SET_WEATHER = 'SET_WEATHER'
@@ -7,6 +7,7 @@ export const REQUEST_WEATHER = 'REQUEST_WEATHER'
 export const RECEIVE_WEATHER = 'RECEIVE_WEATHER'
 export const ADD_FISH = 'ADD_FISH'
 export const UPDATE_FISH = 'UPDATE_FISH'
+export const DELETE_FISH = 'DELETE_FISH'
 
 export function setfish(fish) {
   return {
@@ -63,6 +64,25 @@ export function addAFish(fish) {
       .then((aFish) => {
         dispatch(addFish(aFish))
         return null
+      })
+      .catch((err) => {
+        console.error(err, 'error not item')
+      })
+  }
+}
+
+export function deleteFish(id) {
+  return {
+    type: DELETE_FISH,
+    payload: id,
+  }
+}
+
+export function deleteAFish(id) {
+  return (dispatch) => {
+    return deleteFishAPI(id)
+      .then(() => {
+        dispatch(deleteFish(id))
       })
       .catch((err) => {
         console.error(err, 'error not item')

@@ -1,14 +1,19 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import SingleFish from './SingleFish'
-import { UpdateFish } from './UpdateFish'
-import { fetchFish } from '../actions'
+import { fetchFish, deleteAFish } from '../actions'
 import { Link } from 'react-router-dom'
 import AddFish from './AddFish'
 
 function Fish() {
   const fish = useSelector((state) => state.fish)
   const dispatch = useDispatch()
+
+  function handleSubmit(e) {
+    e.preventDefault()
+    dispatch(deleteAFish(e.target.id))
+  }
+
   useEffect(() => {
     dispatch(fetchFish())
   }, [])
@@ -21,11 +26,12 @@ function Fish() {
           {fish.map((aFish) => (
             <li key={aFish.id}>
               <SingleFish species={aFish.species} />
-              <UpdateFish id={aFish.id} />
               <button id={aFish.id}>
                 <Link to={`/${aFish.id}`}>Edit</Link>
               </button>
-              {/* <deleteFish id={aFish.id} /> */}
+              <button id={aFish.id} onClick={handleSubmit}>
+                Delete
+              </button>
             </li>
           ))}
         </ul>

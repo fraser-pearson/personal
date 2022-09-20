@@ -41,8 +41,9 @@ router.post('/', (req, res) => {
 })
 
 router.delete('/:id', (req, res) => {
-  const fish = req.body.newFish
-  db.deleteFish(fish)
+  const id = req.params.id
+  console.log(req.id)
+  db.deleteFish(id)
     .then(() => {
       res.sendStatus(200)
     })

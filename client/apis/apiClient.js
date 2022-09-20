@@ -17,6 +17,12 @@ export function addNewFish(newFish) {
     })
 }
 
+export function deleteFishAPI(id) {
+  return request.delete(rootUrl + `/fish/${id}`).then((res) => {
+    return res.body
+  })
+}
+
 export function updateFishAPI(id, newFish) {
   return request
     .post(rootUrl + `/fish/${id}`)
